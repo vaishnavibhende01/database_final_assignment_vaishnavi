@@ -1,0 +1,283 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+\par
+                                                                                 SQL Assignment\par
+Name: Vaishnavi Bhende\par
+Date: 08/02/2024\par
+\par
+Q1.\par
+Ans:\par
+mysql> create database final_assignment;\par
+Query OK, 1 row affected (0.17 sec)\par
+\par
+mysql> use final_assignment;\par
+Database changed\par
+\par
+mysql> create table patients(patient_id int primary key, patient_name varchar(50), patient_age int, patient_gender varchar(10), patient_city varchar(50), date_of_admission date, status varchar(50));\par
+Query OK, 0 rows affected (0.25 sec)\par
+\par
+mysql> desc patients;\par
++-------------------+-------------+------+-----+---------+-------+\par
+| Field             | Type        | Null | Key | Default | Extra |\par
++-------------------+-------------+------+-----+---------+-------+\par
+| patient_id        | int         | NO   | PRI | NULL    |       |\par
+| patient_name      | varchar(50) | YES  |     | NULL    |       |\par
+| patient_age       | int         | YES  |     | NULL    |       |\par
+| patient_gender    | varchar(10) | YES  |     | NULL    |       |\par
+| patient_city      | varchar(50) | YES  |     | NULL    |       |\par
+| date_of_admission | date        | YES  |     | NULL    |       |\par
+| status            | varchar(50) | YES  |     | NULL    |       |\par
++-------------------+-------------+------+-----+---------+-------+\par
+7 rows in set (0.08 sec)\par
+\par
+mysql> insert into patients values(1, 'Sita', 20, 'Female','Pune','2020-04-04','admitted');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into patients values(2, 'Gita', 23, 'Female','Pune','2020-04-04','discharged');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into patients values(3, 'Rita', 33, 'Female','Mumbai','2020-04-04','admitted');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into patients values(4, 'Nita', 53, 'Female','Mumbai','2020-03-16','admitted');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into patients values(5, 'Mandar', 53, 'Male','Mumbai','2020-03-16','admitted');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into patients values(6, 'Arun', 23, 'Male','Pune','2022-03-16','admitted');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into patients values(7, 'Aditya', 23, 'Male','Wardha','2022-06-16','discharged');\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> select * from patients;\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+| patient_id | patient_name | patient_age | patient_gender | patient_city | date_of_admission | status     |\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+|          1 | Sita         |          20 | Female         | Pune         | 2020-04-04        | admitted   |\par
+|          2 | Gita         |          23 | Female         | Pune         | 2020-04-04        | discharged |\par
+|          3 | Rita         |          33 | Female         | Mumbai       | 2020-04-04        | admitted   |\par
+|          4 | Nita         |          53 | Female         | Mumbai       | 2020-03-16        | admitted   |\par
+|          5 | Mandar       |          53 | Male           | Mumbai       | 2020-03-16        | admitted   |\par
+|          6 | Arun         |          23 | Male           | Pune         | 2022-03-16        | admitted   |\par
+|          7 | Aditya       |          23 | Male           | Wardha       | 2022-06-16        | discharged |\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+7 rows in set (0.00 sec)\par
+\par
+Q2.\par
+Ans:\par
+mysql> create table doctor(doctor_id int primary key, doctor_name varchar(50), doctor_age int, doctor_gender varchar(10), doctor_city varchar(50), specialization varchar(50), years_of_experience int, salary int);\par
+Query OK, 0 rows affected (0.05 sec)\par
+\par
+mysql> desc doctor;\par
++---------------------+-------------+------+-----+---------+-------+\par
+| Field               | Type        | Null | Key | Default | Extra |\par
++---------------------+-------------+------+-----+---------+-------+\par
+| doctor_id           | int         | NO   | PRI | NULL    |       |\par
+| doctor_name         | varchar(50) | YES  |     | NULL    |       |\par
+| doctor_age          | int         | YES  |     | NULL    |       |\par
+| doctor_gender       | varchar(10) | YES  |     | NULL    |       |\par
+| doctor_city         | varchar(50) | YES  |     | NULL    |       |\par
+| specialization      | varchar(50) | YES  |     | NULL    |       |\par
+| years_of_experience | int         | YES  |     | NULL    |       |\par
+| salary              | int         | YES  |     | NULL    |       |\par
++---------------------+-------------+------+-----+---------+-------+\par
+8 rows in set (0.01 sec)\par
+\par
+mysql> insert into doctor value(11, 'Vaishnavi', 25, 'Female', 'Pune', 'Gynecologist', 4, 80000);\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into doctor value(12, 'Samruddhi', 35, 'Female', 'Ahmedabad', 'Gynecologist', 4, 60000);\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into doctor value(13, 'Anjali', 35, 'Female', 'Ahmedabad', 'Neurologist', 2, 60000);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into doctor value(14, 'Anil', 45, 'Male', 'Ahmedabad', 'Dermatologist', 5, 90000);\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+mysql> insert into doctor value(15, 'Archana', 39, 'Female', 'Nagpur', 'Dermatologist', 6, 90000);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into doctor value(16, 'Shivani', 30, 'Female', 'Nagpur', 'Ortho', 2, 30000);\par
+Query OK, 1 row affected (0.03 sec)\par
+\par
+mysql> insert into doctor value(17, 'Janhavi', 31, 'Female', 'Nagpur', 'Ortho', 7, 80000);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> select * from doctor;\par
++-----------+-------------+------------+---------------+-------------+----------------+---------------------+--------+\par
+| doctor_id | doctor_name | doctor_age | doctor_gender | doctor_city | specialization | years_of_experience | salary |\par
++-----------+-------------+------------+---------------+-------------+----------------+---------------------+--------+\par
+|        11 | Vaishnavi   |         25 | Female        | Pune        | Gynecologist   |                   4 |  80000 |\par
+|        12 | Samruddhi   |         35 | Female        | Ahmedabad   | Gynecologist   |                   4 |  60000 |\par
+|        13 | Anjali      |         35 | Female        | Ahmedabad   | Neurologist    |                   2 |  60000 |\par
+|        14 | Anil        |         45 | Male          | Ahmedabad   | Dermatologist  |                   5 |  90000 |\par
+|        15 | Archana     |         39 | Female        | Nagpur      | Dermatologist  |                   6 |  90000 |\par
+|        16 | Shivani     |         30 | Female        | Nagpur      | Ortho          |                   2 |  30000 |\par
+|        17 | Janhavi     |         31 | Female        | Nagpur      | Ortho          |                   7 |  80000 |\par
++-----------+-------------+------------+---------------+-------------+----------------+---------------------+--------+\par
+7 rows in set (0.00 sec)\par
+\par
+\par
+Q3.\par
+Ans:\par
+mysql> alter table doctor change column specialization subject varchar(50);\par
+Query OK, 0 rows affected (0.06 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+mysql> desc doctor;\par
++---------------------+-------------+------+-----+---------+-------+\par
+| Field               | Type        | Null | Key | Default | Extra |\par
++---------------------+-------------+------+-----+---------+-------+\par
+| doctor_id           | int         | NO   | PRI | NULL    |       |\par
+| doctor_name         | varchar(50) | YES  |     | NULL    |       |\par
+| doctor_age          | int         | YES  |     | NULL    |       |\par
+| doctor_gender       | varchar(10) | YES  |     | NULL    |       |\par
+| doctor_city         | varchar(50) | YES  |     | NULL    |       |\par
+| subject             | varchar(50) | YES  |     | NULL    |       |\par
+| years_of_experience | int         | YES  |     | NULL    |       |\par
+| salary              | int         | YES  |     | NULL    |       |\par
++---------------------+-------------+------+-----+---------+-------+\par
+8 rows in set (0.01 sec)\par
+\par
+Q4.\par
+Ans:\par
+mysql> create table bkup_patients as select * from patients;\par
+Query OK, 7 rows affected (0.06 sec)\par
+Records: 7  Duplicates: 0  Warnings: 0\par
+\par
+mysql> desc bkup_patients;\par
++-------------------+-------------+------+-----+---------+-------+\par
+| Field             | Type        | Null | Key | Default | Extra |\par
++-------------------+-------------+------+-----+---------+-------+\par
+| patient_id        | int         | NO   |     | NULL    |       |\par
+| patient_name      | varchar(50) | YES  |     | NULL    |       |\par
+| patient_age       | int         | YES  |     | NULL    |       |\par
+| patient_gender    | varchar(10) | YES  |     | NULL    |       |\par
+| patient_city      | varchar(50) | YES  |     | NULL    |       |\par
+| date_of_admission | date        | YES  |     | NULL    |       |\par
+| status            | varchar(50) | YES  |     | NULL    |       |\par
++-------------------+-------------+------+-----+---------+-------+\par
+7 rows in set (0.01 sec)\par
+\par
+Q5.\par
+Ans:\par
+mysql> select * from patients where patient_city IN ('Pune','Mumbai');\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+| patient_id | patient_name | patient_age | patient_gender | patient_city | date_of_admission | status     |\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+|          1 | Sita         |          20 | Female         | Pune         | 2020-04-04        | admitted   |\par
+|          2 | Gita         |          23 | Female         | Pune         | 2020-04-04        | discharged |\par
+|          3 | Rita         |          33 | Female         | Mumbai       | 2020-04-04        | admitted   |\par
+|          4 | Nita         |          53 | Female         | Mumbai       | 2020-03-16        | admitted   |\par
+|          5 | Mandar       |          53 | Male           | Mumbai       | 2020-03-16        | admitted   |\par
+|          6 | Arun         |          23 | Male           | Pune         | 2022-03-16        | admitted   |\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+6 rows in set (0.00 sec)\par
+\par
+Q6.\par
+Ans:\par
+mysql> select * from doctor where doctor_city = 'Ahmedabad' AND doctor_name LIKE 'A%';\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+| doctor_id | doctor_name | doctor_age | doctor_gender | doctor_city | subject       | years_of_experience | salary |\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+|        13 | Anjali      |         35 | Female        | Ahmedabad   | Neurologist   |                   2 |  60000 |\par
+|        14 | Anil        |         45 | Male          | Ahmedabad   | Dermatologist |                   5 |  90000 |\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+2 rows in set (0.00 sec)\par
+\par
+Q7.\par
+Ans:\par
+select * from doctor where years_of_experience >= 4;\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+| doctor_id | doctor_name | doctor_age | doctor_gender | doctor_city | subject       | years_of_experience | salary |\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+|        11 | Vaishnavi   |         25 | Female        | Pune        | Gynecologist  |                   4 |  80000 |\par
+|        12 | Samruddhi   |         35 | Female        | Ahmedabad   | Gynecologist  |                   4 |  60000 |\par
+|        14 | Anil        |         45 | Male          | Ahmedabad   | Dermatologist |                   5 |  90000 |\par
+|        15 | Archana     |         39 | Female        | Nagpur      | Dermatologist |                   6 |  90000 |\par
+|        17 | Janhavi     |         31 | Female        | Nagpur      | Ortho         |                   7 |  80000 |\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+5 rows in set (0.00 sec)\par
+\par
+Q8.\par
+Ans:\par
+mysql> update doctor set salary = salary + 1000 where years_of_experience > 5;\par
+Query OK, 2 rows affected (0.01 sec)\par
+Rows matched: 2  Changed: 2  Warnings: 0\par
+\par
+mysql> select * from doctor;\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+| doctor_id | doctor_name | doctor_age | doctor_gender | doctor_city | subject       | years_of_experience | salary |\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+|        11 | Vaishnavi   |         25 | Female        | Pune        | Gynecologist  |                   4 |  80000 |\par
+|        12 | Samruddhi   |         35 | Female        | Ahmedabad   | Gynecologist  |                   4 |  60000 |\par
+|        13 | Anjali      |         35 | Female        | Ahmedabad   | Neurologist   |                   2 |  60000 |\par
+|        14 | Anil        |         45 | Male          | Ahmedabad   | Dermatologist |                   5 |  90000 |\par
+|        15 | Archana     |         39 | Female        | Nagpur      | Dermatologist |                   6 |  91000 |\par
+|        16 | Shivani     |         30 | Female        | Nagpur      | Ortho         |                   2 |  30000 |\par
+|        17 | Janhavi     |         31 | Female        | Nagpur      | Ortho         |                   7 |  81000 |\par
++-----------+-------------+------------+---------------+-------------+---------------+---------------------+--------+\par
+7 rows in set (0.00 sec)\par
+\par
+Q9.\par
+Ans:\par
+mysql> select patient_city, COUNT(*) as no_of_patients from patients group by patient_city;\par
++--------------+----------------+\par
+| patient_city | no_of_patients |\par
++--------------+----------------+\par
+| Pune         |              3 |\par
+| Mumbai       |              3 |\par
+| Wardha       |              1 |\par
++--------------+----------------+\par
+\par
+Q10.\par
+Ans:\par
+mysql> select * from patients where status = 'discharged' AND patient_city IN(select doctor_city from doctor where years_of_experience > 3);\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+| patient_id | patient_name | patient_age | patient_gender | patient_city | date_of_admission | status     |\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+|          2 | Gita         |          23 | Female         | Pune         | 2020-04-04        | discharged |\par
++------------+--------------+-------------+----------------+--------------+-------------------+------------+\par
+1 row in set (0.01 sec)\par
+\par
+Q.11\par
+Ans:\par
+mysql> create table backup_table LIKE doctor;\par
+Query OK, 0 rows affected (0.05 sec)\par
+\par
+mysql> desc backup_table;\par
++---------------------+-------------+------+-----+---------+-------+\par
+| Field               | Type        | Null | Key | Default | Extra |\par
++---------------------+-------------+------+-----+---------+-------+\par
+| doctor_id           | int         | NO   | PRI | NULL    |       |\par
+| doctor_name         | varchar(50) | YES  |     | NULL    |       |\par
+| doctor_age          | int         | YES  |     | NULL    |       |\par
+| doctor_gender       | varchar(10) | YES  |     | NULL    |       |\par
+| doctor_city         | varchar(50) | YES  |     | NULL    |       |\par
+| subject             | varchar(50) | YES  |     | NULL    |       |\par
+| years_of_experience | int         | YES  |     | NULL    |       |\par
+| salary              | int         | YES  |     | NULL    |       |\par
++---------------------+-------------+------+-----+---------+-------+\par
+8 rows in set (0.01 sec)\par
+\par
+Q.12\par
+Ans:\par
+mysql> create table image_video_data(name varchar(50), image_data blob, video_data blob);\par
+Query OK, 0 rows affected (0.04 sec)\par
+\par
+mysql> desc image_video_data;\par
++------------+-------------+------+-----+---------+-------+\par
+| Field      | Type        | Null | Key | Default | Extra |\par
++------------+-------------+------+-----+---------+-------+\par
+| name       | varchar(50) | YES  |     | NULL    |       |\par
+| image_data | blob        | YES  |     | NULL    |       |\par
+| video_data | blob        | YES  |     | NULL    |       |\par
++------------+-------------+------+-----+---------+-------+\par
+3 rows in set (0.01 sec)\par
+\par
+}
+ 
